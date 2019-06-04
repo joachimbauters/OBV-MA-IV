@@ -1,0 +1,55 @@
+.flexform{
+    display: flex;
+    flex-flow: column nowrap;
+    grid-area: form;
+}
+
+.formsection{
+    background-color: cornflowerblue;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 4rem 1fr 4rem;
+    grid-template-rows: 4rem 4rem 1fr 1fr;
+    grid-template-areas: '. . .''. titel .'
+    '. form .'
+    '. . .';
+}
+
+.titel{
+    color: white;
+    grid-area: titel;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.input{
+    height: 4rem;
+    border-radius: 0;
+    border: none;
+    outline: none;
+}
+
+.label{
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.submit{
+    margin-top: 4rem;
+    border: none;
+    height: 4Rem;
+    outline: none;
+}
+
+.print{
+    margin-top: 2rem;
+    border: none;
+    height: 4rem;
+    outline: none;
+}

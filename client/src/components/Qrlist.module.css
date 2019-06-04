@@ -1,0 +1,28 @@
+.qrcontainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.qrcode{
+    height: 25rem;
+    width: 20rem;
+    background-color: white;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 16px 45px -27px rgba(0,0,0,0.47);
+}
+
+.zetel{
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: gray;
+}

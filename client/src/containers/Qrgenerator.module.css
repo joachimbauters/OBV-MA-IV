@@ -1,0 +1,16 @@
+.qrgrid{
+    display:  grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    max-width: 126rem;
+  }
+
+  .wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }

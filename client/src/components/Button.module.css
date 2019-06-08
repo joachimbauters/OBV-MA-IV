@@ -1,0 +1,24 @@
+.blue{
+    height: 5rem;
+    width: 100%;
+    background-color: var(--white-color);
+    border: none;
+    outline: none;
+    border-radius: 0rem 1.5rem 0rem;
+    color: var(--blue-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+
+}
+
+.pink{
+    height: 5rem;
+    width: 100%;
+    background-color: var(--pink-color);
+    border: none;
+    outline: none;
+    border-radius: 0rem 1.5rem 0rem;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+}

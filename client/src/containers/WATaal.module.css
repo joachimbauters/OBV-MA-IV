@@ -1,0 +1,72 @@
+.container{
+    composes: container from "../styles/index.css";
+    background-color: var(--blue-color);
+    height: 100vh;
+
+}
+
+.grid{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr 30rem 3fr 1fr;
+    grid-template-rows: 6rem 1fr 2rem 20rem 3rem;
+    grid-template-areas: 
+    '. . . . .'
+    '. foto foto foto .'
+    '. . . . .'
+    '. . talen . .'
+    '. . . . .'
+
+}
+
+.hide{
+    composes: hide from "../styles/index.css";
+}
+
+.picture{
+    composes: img-responsive from "../styles/index.css";
+}
+
+.foto{
+    grid-area: foto;
+}
+
+.taal{
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+
+}
+
+.talengrid{
+    grid-area: talen;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.tussentitel{
+    color: var(--gray-color);
+    font-size: 1.7rem;
+    font-weight: 400;
+    width: 10rem;
+    margin-left: 1rem;
+
+}
+
+.titel{
+    color: var(--pink-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-left: 1rem;
+
+}
+
+
+.link{
+    text-decoration: none;
+}

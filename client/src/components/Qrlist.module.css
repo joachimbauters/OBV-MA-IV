@@ -10,7 +10,7 @@
 .qrcode{
     height: 25rem;
     width: 20rem;
-    background-color: white;
+    background-color: var(--white-color);
     margin-right: 2rem;
     margin-top: 2rem;
     display: flex;
@@ -29,5 +29,5 @@
     margin-top: 2rem;
     font-size: 1.8rem;
     font-weight: 600;
-    color: gray;
+    color: var(--gray-color);
 }

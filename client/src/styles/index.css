@@ -18,8 +18,10 @@ html {
   body {
     margin: 0;
     padding: 0;
-    font-family: Roboto,sans-serif;
-    font-weight: 300;
+  }
+
+  .wf-montserrat-n4-active body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
   }
 
   .wrapper {
@@ -28,8 +30,19 @@ html {
   }
 
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
     margin: 0 auto;
-    max-width: 126rem;
+    max-width: 57.6rem;
+
+    @media (--md) {
+      max-width: 76rem;
+    }
+  
+    @media (--xl) {
+      max-width: 115rem;
+    }
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
   }

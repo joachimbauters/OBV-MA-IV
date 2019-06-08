@@ -22,6 +22,22 @@
     <title>React App</title>
   </head>
   <body>
+    <script async>
+      WebFontConfig = {
+        google: {
+          families: ["Montserrat: 300,400,500,600,700,800,900"]
+        }
+      };
+
+      (function(d) {
+        var wf = d.createElement("script"),
+          s = d.scripts[0];
+        wf.src =
+          "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

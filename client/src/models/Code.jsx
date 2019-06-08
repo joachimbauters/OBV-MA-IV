@@ -2,45 +2,42 @@ import uuid from "uuid";
 import { decorate, observable, action } from "mobx";
 
 class Code {
-  constructor(type, voertuignummer, aantal, id = uuid.v4()) {
-    this.id = id;
+  constructor(type, voertuignummer, id = uuid.v4()) {
+    this.id = uuid.v4();
     this.type = type;
     this.voertuignummer = voertuignummer;
-    this.aantal = aantal;
     this.stoelnummer = 0;
   }
 
-  updateType = value => {
-    this.type = value;
-  };
+  get values() {
+    return {
+      type: this.type,
+      voertuignummer: this.voertuignummer,
+      stoelnummer: this.stoelnummer
+    };
+  }
 
-  updateVoertuignummer = value => {
-    this.voertuignummer = value;
-  };
-
-  updateAantal = value => {
-    this.aantal = value;
-  };
-
-  updateStoelnummer = value => {
-    this.stoelnummer = value;
-  };
+  updateId = value => (this.id = value);
+  updateType = value => (this.type = value);
+  updateVoertuignummer = value => (this.voertuignummer = value);
+  updateStoelnummer = value => (this.stoelnummer = value);
 
   updateFromServer = values => {
+    if (values._id) this.updateId(values._id);
     this.updateType(values.type);
     this.updateVoertuignummer(values.voertuignummer);
-    this.updateAantal(values.aantal);
     this.updateStoelnummer(values.stoelnummer);
   };
 }
 
 decorate(Code, {
+  id: observable,
   type: observable,
-  nummer: observable,
-  aantal: observable,
+  voertuignummer: observable,
+  stoelnummer: observable,
+  updateId: action,
   updateType: action,
   updateVoertuignummer: action,
-  updateAantal: action,
   updateStoelnummer: action
 });
 

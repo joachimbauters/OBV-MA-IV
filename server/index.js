@@ -20,6 +20,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+require('./app/routes/verhalen.routes.js')(app);
 require('./app/routes/qrcodes.routes.js')(app);
 
 app.listen(process.env.PORT, () => {

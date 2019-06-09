@@ -4,12 +4,14 @@
 
 .container{
     composes: container from "../styles/index.css";
+    max-height: 135rem;
+    
 
 }
 
 .intro{
     background-color: var(--blue-color);
-    height: 100rem;
+    height: 90rem;
 
     background-image: url("../assets/obvletters.svg");
     background-repeat: no-repeat;
@@ -152,3 +154,138 @@
       opacity: 0;
     }
   }
+
+  .verhalen{
+    transform: translateY(-15rem);
+    margin-bottom: -10rem;
+
+  }
+
+
+  .cell{
+    width: 30rem;
+    height: 45rem;
+    margin: auto;
+    margin-right: 2rem;
+    background-color: var(--white-color);
+    border-radius: 3rem 0rem 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 8.62673px 16.1751px rgba(0, 0, 0, 0.1);
+    padding-bottom: 2rem;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 2rem 1rem 1fr 1rem 2rem;
+    grid-template-rows:  3rem min-content 3rem max-content 5rem min-content;
+    grid-template-areas: 
+    '. . . . .'
+    '. identiteit identiteit identiteit .'
+    '. . . . .'
+    '. vraag vraag vraag .'
+    '. . . . .'
+    '. . verhaal . .'
+  }
+
+  .cell::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 10rem;
+}
+ 
+.cell::-webkit-scrollbar-thumb {
+  background-color: var(--gray-color);
+  min-height: 5rem;
+  border-radius: 5rem;
+}
+
+.cell::-webkit-scrollbar-button{
+  height: 2rem;
+}
+
+
+  .naam{
+    color: var(--pink-color);
+    font-weight: 900;
+    font-size: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -0.2rem;
+    
+  }
+
+  .leeftijd{
+    color: var(--gray-color);
+    font-weight: 500;
+    font-size: 1.7rem;
+    align-self: flex-end;
+  }
+
+  .locatie{
+    color: var(--pink-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    grid-area: locatie;
+    justify-self: flex-end;
+    
+  }
+
+
+  .identiteit{
+    grid-area: identiteit;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-areas: 
+    '. .'
+    'locatie locatie';
+    grid-gap: 1rem;
+  }
+
+  .vraag{
+    grid-area: vraag;
+    color: #8e8e8e;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.4rem;
+  }
+
+  .verhaal{
+    grid-area: verhaal;
+    color: var(--gray-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .verhaal:before{
+    content: "";
+    display: block;
+    background: url("../assets/quotation-mark.svg") no-repeat;
+    width: 6rem;
+    height: 6rem;
+    margin-top: -3rem;
+    margin-left: -1rem;
+    position: absolute;
+    z-index: 0;
+
+  }
+
+  .button{
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem; 
+  }
+
+
+  .noseat{
+    grid-column: 2/-2;
+    justify-self: center;
+    align-self: center;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-color);
+    text-align: center;
+    margin-top: 40rem;
+  }
+  

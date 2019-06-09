@@ -5,14 +5,14 @@ import styles from "./WAHome.module.css";
 
 import Button from "../components/Button";
 
-const Operaonwheels = ({ stoelnummer, voertuignummer }) => {
+const Operaonwheels = ({ typevervoer, stoelnummer, voertuignummer }) => {
   return (
     <>
       <section className={styles.container}>
         <h1 className={styles.hide}>introvideo</h1>
         <Link
           className={styles.button}
-          to={`/taal/${voertuignummer}/${stoelnummer}`}
+          to={`/taal/${typevervoer}/${voertuignummer}/${stoelnummer}`}
         >
           <Button type="white" text="Volgende" />
         </Link>

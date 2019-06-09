@@ -6,8 +6,10 @@ const VerhaalSchema = new mongoose.Schema(
     leeftijd: Number,
     vraag: String,
     verhaal: String,
+    typevervoer: String,
     voertuignummer: Number,
-    stoelnummer: Number
+    stoelnummer: Number,
+    date: String
     // ,rating: {type: mongoose.Schema.Types.ObjectId, ref: 'Rating'}
   },
   {

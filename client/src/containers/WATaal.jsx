@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./WATaal.module.css";
 import img from "../assets/obvlanguage.png";
 
-const WATaal = ({ voertuignummer, stoelnummer }) => {
+const WATaal = ({ typevervoer, voertuignummer, stoelnummer }) => {
   return (
     <>
       <section className={styles.container}>
@@ -19,7 +19,7 @@ const WATaal = ({ voertuignummer, stoelnummer }) => {
           <div className={styles.talengrid}>
             <Link
               className={styles.link}
-              to={`/verhalen/${voertuignummer}/${stoelnummer}`}
+              to={`/verhalen/${typevervoer}/${voertuignummer}/${stoelnummer}`}
             >
               <div className={styles.taal}>
                 <p className={styles.tussentitel}>Hallo, welkom!</p>
@@ -28,7 +28,7 @@ const WATaal = ({ voertuignummer, stoelnummer }) => {
             </Link>
             <Link
               className={styles.link}
-              to={`/verhalen/${voertuignummer}/${stoelnummer}`}
+              to={`/verhalen/${typevervoer}/${voertuignummer}/${stoelnummer}`}
             >
               <div className={styles.taal}>
                 <p className={styles.tussentitel}>Bonjour, bienvenue!</p>
@@ -37,7 +37,7 @@ const WATaal = ({ voertuignummer, stoelnummer }) => {
             </Link>
             <Link
               className={styles.link}
-              to={`/verhalen/${voertuignummer}/${stoelnummer}`}
+              to={`/verhalen/${typevervoer}/${voertuignummer}/${stoelnummer}`}
             >
               <div className={styles.taal}>
                 <p className={styles.tussentitel}>Hello, welcome!</p>
@@ -46,7 +46,7 @@ const WATaal = ({ voertuignummer, stoelnummer }) => {
             </Link>
             <Link
               className={styles.link}
-              to={`/verhalen/${voertuignummer}/${stoelnummer}`}
+              to={`/verhalen/${typevervoer}/${voertuignummer}/${stoelnummer}`}
             >
               <div className={styles.taal}>
                 <p className={styles.tussentitel}>Guten tag, Wilkommen!</p>

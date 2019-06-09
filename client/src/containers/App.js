@@ -20,10 +20,12 @@ function App() {
           exact
           strict
           render={({ match }) => {
+            const typevervoer = match.params.typevervoer;
             const stoelnummer = match.params.stoelnummer;
             const voertuignummer = match.params.voertuignummer;
             return (
               <WAHome
+                typevervoer={typevervoer}
                 stoelnummer={stoelnummer}
                 voertuignummer={voertuignummer}
               />
@@ -35,10 +37,12 @@ function App() {
           exact
           strict
           render={({ match }) => {
+            const typevervoer = match.params.typevervoer;
             const stoelnummer = match.params.stoelnummer;
             const voertuignummer = match.params.voertuignummer;
             return (
               <WATaal
+                typevervoer={typevervoer}
                 stoelnummer={stoelnummer}
                 voertuignummer={voertuignummer}
               />
@@ -50,10 +54,12 @@ function App() {
           exact
           strict
           render={({ match }) => {
+            const typevervoer = match.params.typevervoer;
             const stoelnummer = match.params.stoelnummer;
             const voertuignummer = match.params.voertuignummer;
             return (
               <WAVerhalen
+                typevervoer={typevervoer}
                 stoelnummer={stoelnummer}
                 voertuignummer={voertuignummer}
               />

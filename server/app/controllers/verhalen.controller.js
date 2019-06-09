@@ -11,8 +11,10 @@ exports.create = async (req, res) => {
     leeftijd: req.body.leeftijd,
     vraag: req.body.vraag,
     verhaal: req.body.verhaal,
+    typevervoer: req.body.typevervoer,
     voertuignummer: req.body.voertuignummer,
-    stoelnummer: req.body.stoelnummer
+    stoelnummer: req.body.stoelnummer,
+    date: req.body.date
   });
 
   verhaal

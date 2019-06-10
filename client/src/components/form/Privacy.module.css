@@ -1,0 +1,92 @@
+.container{
+    display: grid;
+    margin-bottom: 30%;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-gap: 2.3rem;
+    grid-template-areas: 
+    '. title .'
+    '. text .'
+    '. check1 .'
+    '. check2 .'
+
+
+}
+
+.hide{
+    composes: hide from "../../styles/index.css";
+}
+
+.outline {
+    color: var(--white-color);
+    font-size: 2.5rem;
+    -webkit-text-stroke: 0.177rem var(--pink-color);
+  }
+
+.title{
+    grid-area: title;
+    font-weight: 900;
+    font-size: 3rem;
+    color: var(--pink-color);
+    text-transform: uppercase;
+    line-height: 3.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.text{
+    grid-area: text;
+    color: #A5A5A5;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 300;
+}
+
+.check1{
+    margin-top: 2rem;
+    grid-area: check1;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.check2{
+    grid-area: check2;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+input[type='checkbox'].checkbox {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  input[type='checkbox'].checkbox ~ .checkmark {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0.2rem solid #A5A5A5;
+    cursor: pointer;
+    border-radius: 0.1rem;
+    margin-top: 0.3rem;
+  }
+
+
+  input[type='checkbox'].checkbox:checked ~ .checkmark {
+    border-color: var(--pink-color);
+    background: var(--pink-color) url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=) center no-repeat;
+    background-size: 75%;
+  }
+
+  .voorwaardentext{
+    color: var(--black-color);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+
+}

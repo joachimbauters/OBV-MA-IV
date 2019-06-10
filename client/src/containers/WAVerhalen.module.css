@@ -9,6 +9,31 @@
 
 }
 
+.link{
+  grid-area: back;
+
+}
+
+.back{
+  margin-top: 4.5rem;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  font-weight: 300;
+  opacity: 0.5;
+  display: flex;
+}
+
+.back::before{
+  content: url("../assets/leftarrowwhite.svg");
+  margin-right: 1rem;
+  margin-top: -0.2rem;
+}
+
+.highlight{
+  font-weight: 700;
+
+}
+
 .intro{
     background-color: var(--blue-color);
     height: 90rem;
@@ -22,7 +47,7 @@
     grid-template-columns: 5rem 1fr 5rem;
     grid-template-rows: 20rem min-content 5rem min-content 5rem min-content;
     grid-template-areas: 
-    '. . .'
+    '. back .'
     '. sub .'
     '. . .'
     '. main .'

@@ -1,0 +1,138 @@
+.container{
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-gap: 2.3rem;
+    grid-template-rows: 2rem repeat(5, min-content) ;
+    grid-template-areas: 
+    '. . .'
+    '. back .'
+    '. title .'
+    '. text .'
+    '. input .'
+    '. voorwaarden .'
+}
+
+.back{
+    font-size: 1.5rem;
+    color: var(--pink-color);
+    font-weight: 300;
+    opacity: 0.5;
+    display: flex;
+}
+
+.back::before{
+    content: url("../../assets/leftarrow.svg");
+    margin-right: 1rem;
+    margin-top: -0.2rem;
+}
+
+.link{
+    grid-area: back;
+    text-decoration: none;
+}
+
+.highlight{
+    font-weight: 700;
+
+}
+
+.outline {
+    color: var(--white-color);
+    -webkit-text-stroke: 0.177rem var(--pink-color);
+  }
+
+.title{
+    grid-area: title;
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: var(--pink-color);
+    text-transform: uppercase;
+    line-height: 4rem;
+    width: 20rem;
+}
+
+.text{
+    grid-area: text;
+    color: #A5A5A5;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 300;
+}
+
+.input{
+    grid-area: input;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 15rem;
+}
+
+.input label{
+    color: #8E8E8E;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+
+.input input{
+    padding: 1rem;
+    border: none;
+    color: var(--gray-color);
+    font-size: 1.5rem;
+    border-bottom: 0.2rem solid var(--pink-color);
+    outline: none;
+}
+
+.input input::placeholder{
+    color: #c7c7c7;
+}
+
+.voorwaarden{
+    grid-area: voorwaarden;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+input[type='checkbox'].checkbox {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  input[type='checkbox'].checkbox ~ .checkmark {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0.2rem solid #A5A5A5;
+    cursor: pointer;
+    border-radius: 0.1rem;
+    margin-top: 0.3rem;
+  }
+
+
+  input[type='checkbox'].checkbox:checked ~ .checkmark {
+    border-color: var(--pink-color);
+    background: var(--pink-color) url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=) center no-repeat;
+    background-size: 75%;
+  }
+
+.voorwaardentext{
+    color: var(--black-color);
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+
+}
+
+.underline{
+
+    color: var(--pink-color);
+    text-decoration: underline;
+
+}

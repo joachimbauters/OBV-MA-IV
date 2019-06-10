@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PropTypes, inject, observer } from "mobx-react";
 import styles from "./WAVerhalen.module.css";
 import Slider from "../components/Slider";
@@ -78,6 +78,16 @@ class WAVerhalen extends Component {
         <div className={styles.container}>
           <section className={styles.intro}>
             <h1 className={styles.hide}>verhalen intro</h1>
+            <Link
+              className={styles.link}
+              to={`/taal/${typevervoer}/${voertuignummer}/${stoelnummer}`}
+            >
+              <div className={styles.back}>
+                <p>
+                  Terug naar <span className={styles.highlight}>talen</span>
+                </p>
+              </div>
+            </Link>
             <p className={styles.subtext}>
               Dagelijks nemen gemiddeld 2.140.000 mensen het openbaar vervoer,
               met elk hun eigen verhaal. Het is juist in die verhalen dat wij
@@ -133,7 +143,12 @@ class WAVerhalen extends Component {
               </Slider>
             )}
             <div className={styles.button}>
-              <Button type="pink" text="Vertel jouw verhaal" />
+              <Link
+                className={styles.link}
+                to={`/wiebenje/${typevervoer}/${voertuignummer}/${stoelnummer}`}
+              >
+                <Button type="pink" text="Vertel jouw verhaal" />
+              </Link>
             </div>
           </section>
           <div className={styles.barcontainer}>

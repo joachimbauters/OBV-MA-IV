@@ -1,0 +1,26 @@
+.chart {
+    width: 4rem;
+    margin-right: 1rem;
+  }
+  
+  .chartprogress {
+    fill: none;
+    transform-origin: 50% 50%;
+  
+    stroke-width: 10;
+    stroke-linecap: round;
+    /* 40+40 *3.14 = 251.2 */
+    stroke-dasharray: 0.1 251.2;
+  }
+  
+  .chartbackground {
+    fill: none;
+    stroke: var(--mid-grey);
+    stroke-width: 10;
+  }
+  
+  .chartvalue {
+    fill: #3F3F3F;
+    font-size: 2em;
+    font-weight: 500;
+  }

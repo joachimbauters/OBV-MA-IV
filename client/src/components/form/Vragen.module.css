@@ -1,0 +1,89 @@
+.container{
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-gap: 2.3rem;
+    margin-bottom: 10%;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: 
+    '. text .'
+    '. label .'
+    'vragen vragen vragen';
+
+}
+
+.hide{
+    composes: hide from "../../styles/index.css";
+}
+
+.text{
+    grid-area: text;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.label{
+    grid-area: label;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    margin-top: 1rem;
+}
+
+.switchfield{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper{
+    grid-area: vragen;
+    margin-top: 4rem;
+   
+}
+
+
+.switchfield input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 0.1rem;
+	width: 0.1rem;
+	border: 0;
+    overflow: hidden;
+    outline: none;
+}
+
+.switchfield label {
+
+    flex: 0 0 auto;
+    background-color: var(--pink-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+	text-align: center;
+    height: 15rem;
+    width: 30rem;
+    border-radius: 3rem 0rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    outline: none;
+
+}
+
+.switchfield label:hover {
+	cursor: pointer;
+}
+
+.switchfield input:checked + label {
+	box-shadow: inset 0px 0px 0px 5px var(--white-color);
+}
+
+
+

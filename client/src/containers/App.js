@@ -7,6 +7,7 @@ import Home from "./Home";
 import WAHome from "./WAHome";
 import WATaal from "./WATaal";
 import WAVerhalen from "./WAVerhalen";
+import WAForm from "./WAForm";
 import Qrgenerator from "./Qrgenerator";
 import NotFound from "../components/notfound/index";
 
@@ -59,6 +60,23 @@ function App() {
             const voertuignummer = match.params.voertuignummer;
             return (
               <WAVerhalen
+                typevervoer={typevervoer}
+                stoelnummer={stoelnummer}
+                voertuignummer={voertuignummer}
+              />
+            );
+          }}
+        />
+        <Route
+          path={ROUTES.applicationusername}
+          exact
+          strict
+          render={({ match }) => {
+            const typevervoer = match.params.typevervoer;
+            const stoelnummer = match.params.stoelnummer;
+            const voertuignummer = match.params.voertuignummer;
+            return (
+              <WAForm
                 typevervoer={typevervoer}
                 stoelnummer={stoelnummer}
                 voertuignummer={voertuignummer}

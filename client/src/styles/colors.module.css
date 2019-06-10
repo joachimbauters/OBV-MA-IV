@@ -3,7 +3,14 @@
     --black-color: #000000;
     --blue-color: #2F3064;
     --gray-color: #9F9F9F;
-    --pink-color: #EF5A64
+    --pink-color: #EF5A64;
+    --grey: rgb(245, 248, 250);
+  --dark-grey: #9197a3;
+  --mid-grey: rgb(211, 220, 225);
+  --blue: rgb(29, 161, 242);
+  --black: rgb(20, 23, 26);
+  --orange: rgb(253, 181, 60);
+  --red: rgb(255, 46, 107);
   }
 
 @custom-media --xs screen and (min-width: 0);

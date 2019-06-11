@@ -40,8 +40,9 @@
 
 .area{
     grid-area: textarea;
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-columns: 5fr 1fr; 
+    grid-template-areas: '. chart'
 
 }
 
@@ -50,14 +51,22 @@
     border-radius: 3rem 0rem 3rem;
     outline: none;
     border: none;
-    padding: 1rem;
+    padding: 2rem;
+    font-size: 1.5rem;
     font-family: 'Montserrat', 'Arial', sans-serif;
+
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: 0;
 
 }
 
 .chart{
-    transform: translateY(-5rem);
-    margin-left: 80%;
+    position: relative;
+    grid-area: chart;
+    z-index: 5;
+    align-self: flex-end;
+    margin-bottom: 1rem;
 }
 
 .button{

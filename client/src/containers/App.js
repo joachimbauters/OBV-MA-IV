@@ -8,6 +8,7 @@ import WAHome from "./WAHome";
 import WATaal from "./WATaal";
 import WAVerhalen from "./WAVerhalen";
 import WAForm from "./WAForm";
+import WABedankt from "./WABedankt";
 import Qrgenerator from "./Qrgenerator";
 import NotFound from "../components/notfound/index";
 
@@ -20,70 +21,51 @@ function App() {
           path={ROUTES.application}
           exact
           strict
-          render={({ match }) => {
-            const typevervoer = match.params.typevervoer;
-            const stoelnummer = match.params.stoelnummer;
-            const voertuignummer = match.params.voertuignummer;
-            return (
-              <WAHome
-                typevervoer={typevervoer}
-                stoelnummer={stoelnummer}
-                voertuignummer={voertuignummer}
-              />
-            );
-          }}
+          render={({ match }) => (
+            <WAHome
+              typevervoer={match.params.typevervoer}
+              stoelnummer={match.params.stoelnummer}
+              voertuignummer={match.params.voertuignummer}
+            />
+          )}
         />
         <Route
           path={ROUTES.applicationtaal}
           exact
           strict
-          render={({ match }) => {
-            const typevervoer = match.params.typevervoer;
-            const stoelnummer = match.params.stoelnummer;
-            const voertuignummer = match.params.voertuignummer;
-            return (
-              <WATaal
-                typevervoer={typevervoer}
-                stoelnummer={stoelnummer}
-                voertuignummer={voertuignummer}
-              />
-            );
-          }}
+          render={({ match }) => (
+            <WATaal
+              typevervoer={match.params.typevervoer}
+              stoelnummer={match.params.stoelnummer}
+              voertuignummer={match.params.voertuignummer}
+            />
+          )}
         />
         <Route
           path={ROUTES.applicationverhalen}
           exact
           strict
-          render={({ match }) => {
-            const typevervoer = match.params.typevervoer;
-            const stoelnummer = match.params.stoelnummer;
-            const voertuignummer = match.params.voertuignummer;
-            return (
-              <WAVerhalen
-                typevervoer={typevervoer}
-                stoelnummer={stoelnummer}
-                voertuignummer={voertuignummer}
-              />
-            );
-          }}
+          render={({ match }) => (
+            <WAVerhalen
+              typevervoer={match.params.typevervoer}
+              stoelnummer={match.params.stoelnummer}
+              voertuignummer={match.params.voertuignummer}
+            />
+          )}
         />
         <Route
           path={ROUTES.applicationusername}
           exact
           strict
-          render={({ match }) => {
-            const typevervoer = match.params.typevervoer;
-            const stoelnummer = match.params.stoelnummer;
-            const voertuignummer = match.params.voertuignummer;
-            return (
-              <WAForm
-                typevervoer={typevervoer}
-                stoelnummer={stoelnummer}
-                voertuignummer={voertuignummer}
-              />
-            );
-          }}
+          render={({ match }) => (
+            <WAForm
+              typevervoer={match.params.typevervoer}
+              stoelnummer={match.params.stoelnummer}
+              voertuignummer={match.params.voertuignummer}
+            />
+          )}
         />
+        <Route path={ROUTES.applicationbedankt} component={WABedankt} />
         <Route path={ROUTES.qrgenerator} component={Qrgenerator} />
         <Route component={NotFound} />
       </Switch>

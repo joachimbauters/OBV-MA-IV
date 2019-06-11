@@ -145,7 +145,7 @@ class WAVerhalen extends Component {
             <div className={styles.button}>
               <Link
                 className={styles.link}
-                to={`/wiebenje/${typevervoer}/${voertuignummer}/${stoelnummer}`}
+                to={`/form/${typevervoer}/${voertuignummer}/${stoelnummer}`}
               >
                 <Button type="pink" text="Vertel jouw verhaal" />
               </Link>

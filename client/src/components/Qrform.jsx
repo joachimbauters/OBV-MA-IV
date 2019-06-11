@@ -37,10 +37,10 @@ const Qrform = ({ qrStore }) => {
             ref={inputType}
             required
           >
-            <option>Trein</option>
-            <option>Tram</option>
-            <option>Metro</option>
-            <option>Bus</option>
+            <option>trein</option>
+            <option>tram</option>
+            <option>metro</option>
+            <option>bus</option>
           </select>
           <label htmlFor="voertuignummer" className={styles.label}>
             Wat is het voertuignummer?

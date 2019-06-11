@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import styles from "./WAForm.module.css";
+import { withRouter } from "react-router-dom";
 
 import Name from "../components/form/Name";
 import Leeftijd from "../components/form/Leeftijd";
@@ -42,6 +43,8 @@ class WAForm extends Component {
       Vraag: ${vraag} \n
       privacy: ${privacy} \n
       verhaal: ${verhaal}`);
+
+    this.props.history.push("/bedankt");
   };
 
   _next() {
@@ -209,4 +212,4 @@ class WAForm extends Component {
   }
 }
 
-export default WAForm;
+export default withRouter(WAForm);

@@ -22,3 +22,16 @@
     font-size: 1.8rem;
     font-weight: 700;
 }
+
+.outline{
+    height: 5rem;
+    width: 100%;
+    background-color: transparent;
+    border: 0.2rem solid var(--white-color);
+    outline: none;
+    border-radius: 0rem 1.5rem 0rem;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+
+}

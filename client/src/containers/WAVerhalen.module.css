@@ -11,6 +11,7 @@
 
 .link{
   grid-area: back;
+  text-decoration: none;
 
 }
 

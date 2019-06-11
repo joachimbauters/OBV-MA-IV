@@ -1,0 +1,86 @@
+.container{
+    height: 100vh;
+    background-color: var(--blue-color);
+    display: grid;
+    grid-template-columns: 2rem 2rem 1fr 2rem 2rem;
+    grid-template-areas: 
+    '. . flex . .';
+}
+
+.flex{
+  grid-area: flex;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 5rem;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.title{
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.177rem var(--white-color);
+}
+
+.foto{
+  transform: translateY(-1rem);
+  composes: img-responsive from "../styles/index.css";
+}
+
+
+.subtitle{
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 2.4rem;
+    transform: translateY(-3rem);
+
+}
+
+.text{
+    grid-area: text;
+    color: var(--white-color);
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    margin-bottom: 10rem;
+
+}
+
+.buttons{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 11rem;
+}
+
+.barcontainer
+{
+  position: fixed;
+  z-index: 5rem;
+  width: 100%;
+  height: 1.2rem;
+  background-color: #F1F1F1;
+  bottom: 0;
+}
+
+.progressline100
+{
+  height: 1.2rem;
+  background-color: var(--pink-color);
+  animation: loading100 1s  ease-out forwards;
+}
+
+@keyframes loading100 {
+    0%
+      {
+        width: 87.5%;
+      }
+    100%
+      {
+        width: 100%;
+      }
+
+  }

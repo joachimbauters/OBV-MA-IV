@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import styles from "./Verhaal.module.css";
 import Chart from "./Chart";
 
@@ -8,17 +7,18 @@ class Verhaal extends Component {
     super(props);
     this.state = {
       maxLength: 500,
-      currentTweet: ""
+      currentTweet: "",
+      redirect: false
     };
   }
+
+  handleOnClick = () => {
+    this.setState({ redirect: true });
+  };
 
   get charsLeft() {
     return this.state.maxLength - this.state.currentTweet.length;
   }
-
-  setCurrentTweet = value => {
-    this.setState({ currentTweet: value });
-  };
 
   render() {
     if (this.props.currentStep !== 5) {

@@ -1,5 +1,4 @@
-const Verhaal = require('../models/verhaal.model.js');
-//const Rating = require('../models/rating.model.js');
+const {Verhaal} = require('../models/verhaal.model.js');
 
 exports.create = async (req, res) => {
   if (!req.body.verhaal) {
@@ -28,9 +27,16 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
   try {
     const verhalen = await Verhaal.find();
+    // .populate('rating')
+    // .exec((err, posts) => {
+    //   console.log(err);
+
+    //   console.log(`Populated User ${posts}`);
+    // });
 
     res.send(verhalen);
   } catch (err) {
+    console.log(err);
     res.status(500).send({err: err.verhalen || 'Error'});
   }
 };

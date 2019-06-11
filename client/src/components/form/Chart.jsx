@@ -22,6 +22,7 @@ const Chart = ({ value, max }) => {
         transform="rotate(-90)"
         style={style}
       />
+
       <text className={styles.chartvalue} x="50" y="60" textAnchor="middle">
         {value}
       </text>

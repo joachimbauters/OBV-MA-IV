@@ -1,0 +1,33 @@
+.wrapper{
+    composes: wrapper from "../../styles/index.css";
+}
+
+.container {
+    composes: container from "../../styles/index.css";
+  }
+
+  .introtitel{
+    font-weight: 900;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.177rem var(--blue-color);
+}
+
+.intropink{
+    color: var(--pink-color);
+    -webkit-text-stroke: 0rem var(--blue-color);
+}
+
+.vraag{
+    font-size: 1.6rem;
+    color: #494949;
+    font-weight: 700;
+}
+
+.verhaal{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 2.4rem;
+}

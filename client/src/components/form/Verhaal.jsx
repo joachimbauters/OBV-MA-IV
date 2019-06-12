@@ -7,13 +7,12 @@ class Verhaal extends Component {
     super(props);
     this.state = {
       maxLength: 500,
-      currentTweet: "",
-      redirect: false
+      currentTweet: ""
     };
   }
 
-  handleOnClick = () => {
-    this.setState({ redirect: true });
+  setCurrentTweet = value => {
+    this.setState({ currentTweet: value });
   };
 
   get charsLeft() {
@@ -43,7 +42,11 @@ class Verhaal extends Component {
               placeholder="Vertel hier je verhaal..."
               maxLength={this.state.maxLength}
               value={this.state.currentTweet}
-              onChange={e => this.setCurrentTweet(e.currentTarget.value)}
+              name="verhaal"
+              onChange={e => {
+                this.setCurrentTweet(e.currentTarget.value);
+                this.props.handleChange(e);
+              }}
             />
             <div className={styles.chart}>
               <Chart value={this.charsLeft} max={this.state.maxLength} />

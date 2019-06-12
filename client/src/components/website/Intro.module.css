@@ -1,0 +1,71 @@
+.wrapper{
+    composes: wrapper from "../../styles/index.css";
+}
+
+.container {
+    composes: container from "../../styles/index.css";
+    margin-top: 10rem;
+  }
+
+.introtitel{
+    font-weight: 900;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 5rem;
+    color: transparent;
+    -webkit-text-stroke: 0.177rem var(--blue-color);
+}
+
+.intropink{
+    color: var(--pink-color);
+    -webkit-text-stroke: 0rem var(--blue-color);
+}
+
+.introtext{
+    color: var(--gray-color);
+    font-weight: 300;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    margin-top: 3rem;
+}
+
+@media only screen and (min-width: 78.75em){
+    .introtext{
+        color: var(--gray-color);
+        font-weight: 300;
+        line-height: 3rem;
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        width: 60rem;
+    }
+  }
+
+
+
+    .introgrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    
+    }
+
+
+  @media only screen and (min-width: 78.75em){
+    .introgrid{
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-gap: 2rem;
+    
+    }
+  }
+
+.introimg{
+    composes: img-responsive from "../../styles/index.css";
+    grid-area: img;
+}
+
+.titleflex{
+    display: flex;
+    flex-flow: column nowrap;
+
+}

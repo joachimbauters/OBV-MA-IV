@@ -12,7 +12,10 @@
     "react-easy-print": "^0.6.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "uuid": "^3.3.2"
+    "react-simple-animate": "^3.2.0",
+    "siema": "^1.5.1",
+    "uuid": "^3.3.2",
+    "webpurify": "^2.1.0"
   },
   "proxy": "http://localhost:4000",
   "scripts": {
@@ -35,7 +38,6 @@
     "@storybook/addon-actions": "^5.0.0",
     "@storybook/addon-links": "^5.0.0",
     "@storybook/addons": "^5.0.0",
-    "@storybook/react": "^5.0.0",
-    "babel-loader": "^8.0.5"
+    "@storybook/react": "^5.0.0"
   }
 }

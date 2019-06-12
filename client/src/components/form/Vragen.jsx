@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import styles from "./Vragen.module.css";
+import vragen from "../../constants/vragen.json";
 
 class Vragen extends Component {
   render() {
@@ -20,21 +21,21 @@ class Vragen extends Component {
           </h2>
           <div className={styles.wrapper}>
             <div className={styles.switchfield}>
-              <input type="radio" id="vraag1" name="vraag" />
-              <label htmlFor="vraag1">
-                Ballerina’s kunnen door middel van gebaren emoties uitdrukken,
-                maar wat is het mooiste gebaar dat iemand voor u heeft gedaan?
-              </label>
-              <input type="radio" id="vraag2" name="vraag" />
-              <label htmlFor="vraag2">
-                Vaak reizen ballet producties de hele werled rond, maar wat is
-                uw mooiste reis herinnering?
-              </label>
-              <input type="radio" id="vraag3" name="vraag" />
-              <label htmlFor="vraag3">
-                Vele Opera voorstellingen gaan over passie, maar wat is jouw
-                grootste passie?
-              </label>
+              {Object.values(vragen).map(vraag => (
+                <>
+                  <input
+                    type="radio"
+                    id={vraag.id}
+                    name="vraag"
+                    value={vraag.id}
+                    className={styles.switchfieldinput}
+                    onChange={this.props.handleChange}
+                  />
+                  <label htmlFor={vraag.id} className={styles.switchfieldlabel}>
+                    {vraag.vraag}
+                  </label>
+                </>
+              ))}
             </div>
           </div>
         </div>

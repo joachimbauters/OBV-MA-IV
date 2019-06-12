@@ -27,12 +27,6 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
   try {
     const verhalen = await Verhaal.find();
-    // .populate('rating')
-    // .exec((err, posts) => {
-    //   console.log(err);
-
-    //   console.log(`Populated User ${posts}`);
-    // });
 
     res.send(verhalen);
   } catch (err) {

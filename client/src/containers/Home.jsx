@@ -1,9 +1,15 @@
 import React from "react";
+//import styles from "./Home.module.css";
+import Header from "../components/website/Header";
+import Intro from "../components/website/Intro";
+import Populair from "../components/website/Popular";
 
 const Home = () => {
   return (
     <>
-      <p>Home</p>
+      <Header />
+      <Intro />
+      <Populair />
     </>
   );
 };

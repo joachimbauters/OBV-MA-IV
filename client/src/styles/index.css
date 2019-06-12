@@ -19,6 +19,7 @@ html {
     margin: 0;
     padding: 0;
   }
+  
 
   .wf-montserrat-n4-active body {
     font-family: 'Montserrat', 'Arial', sans-serif;
@@ -29,16 +30,25 @@ html {
     padding-bottom: 2rem;
   }
 
-  .container {
-    margin: 0 auto;
-    max-width: 57.6rem;
+  @media only screen and (min-width: 0){
+    .container {
+      margin: 0 auto;
+      max-width: 57.6rem;
+    }
+  }
 
-    @media (--md) {
+  @media only screen and (min-width: 45em){
+    .container {
+      margin: 0 auto;
       max-width: 76rem;
     }
-  
-    @media (--xl) {
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .container {
+      margin: 0 auto;
       max-width: 115rem;
+
     }
   }
 

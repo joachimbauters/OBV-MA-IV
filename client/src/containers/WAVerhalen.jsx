@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes, inject, observer } from "mobx-react";
 import styles from "./WAVerhalen.module.css";
-import Slider from "../components/Slider";
 import Button from "../components/Button";
+import Siema from "siema";
 
 class WAVerhalen extends Component {
   constructor(props) {
@@ -15,16 +15,12 @@ class WAVerhalen extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.listenToScroll);
-    window.addEventListener("touchstart", this.touchStart);
-    window.addEventListener("touchmove", this.preventTouch, { passive: false });
+    this.siema = new Siema();
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.listenToScroll);
-    window.removeEventListener("touchstart", this.touchStart);
-    window.removeEventListener("touchmove", this.preventTouch, {
-      passive: false
-    });
+    this.siema = new Siema();
   }
 
   listenToScroll = () => {
@@ -43,24 +39,6 @@ class WAVerhalen extends Component {
       this.setScrollMode(false);
     }
   };
-
-  touchStart(e) {
-    this.firstClientX = e.touches[0].clientX;
-    this.firstClientY = e.touches[0].clientY;
-  }
-
-  preventTouch(e) {
-    const minValue = 5;
-
-    this.clientX = e.touches[0].clientX - this.firstClientX;
-    this.clientY = e.touches[0].clientY - this.firstClientY;
-
-    if (Math.abs(this.clientX) > minValue) {
-      e.preventDefault();
-      e.returnValue = false;
-      return false;
-    }
-  }
 
   render() {
     const { scroll } = this.state;
@@ -107,12 +85,7 @@ class WAVerhalen extends Component {
           <section className={styles.verhalen}>
             <h1 className={styles.hide}>verhalen mensen op jouw stoel</h1>
             {filter2.length > 0 ? (
-              <Slider
-                options={{
-                  adaptiveHeight: true,
-                  prevNextButtons: false
-                }}
-              >
+              <div className="siema">
                 {filter2.map(verhaal => (
                   <article key={verhaal.id} className={styles.cell}>
                     <div className={styles.identiteit}>
@@ -127,20 +100,13 @@ class WAVerhalen extends Component {
                     <p className={styles.verhaal}>{verhaal.verhaal}</p>
                   </article>
                 ))}
-              </Slider>
+              </div>
             ) : (
-              <Slider
-                options={{
-                  adaptiveHeight: true,
-                  prevNextButtons: false
-                }}
-              >
-                <article className={styles.cell}>
-                  <p className={styles.noseat}>
-                    Jij kan de eerste zijn die zijn verhaal deelt op deze zetel!
-                  </p>
-                </article>
-              </Slider>
+              <article className={styles.cell}>
+                <p className={styles.noseat}>
+                  Jij kan de eerste zijn die zijn verhaal deelt op deze zetel!
+                </p>
+              </article>
             )}
             <div className={styles.button}>
               <Link

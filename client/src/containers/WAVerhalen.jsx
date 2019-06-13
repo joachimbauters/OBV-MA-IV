@@ -4,6 +4,7 @@ import { PropTypes, inject, observer } from "mobx-react";
 import styles from "./WAVerhalen.module.css";
 import Button from "../components/Button";
 import Siema from "siema";
+import video from "../assets/Appintro.mp4";
 
 class WAVerhalen extends Component {
   constructor(props) {
@@ -70,11 +71,9 @@ class WAVerhalen extends Component {
                 </p>
               </div>
             </Link>
-            <p className={styles.subtext}>
-              Dagelijks nemen gemiddeld 2.140.000 mensen het openbaar vervoer,
-              met elk hun eigen verhaal. Het is juist in die verhalen dat wij
-              van Opera Ballet Vlaanderen veel waarde zien.
-            </p>
+            <video width="100%" loop autoPlay className={styles.treinvideo}>
+              <source src={video} type="video/mp4" />
+            </video>
             <p className={styles.hoofdtext}>
               Hieronder vind je de verhalen van mensen die eerder in jouw stoel
               plaats namen.

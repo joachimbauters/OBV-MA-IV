@@ -7,6 +7,19 @@
     margin-top: 10rem;
   }
 
+  @media only screen and (min-width: 0){
+    .introimg{
+        display: none;
+    }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .introimg{
+        display: block;
+    }
+  }
+
+
 .introtitel{
     font-weight: 900;
     font-size: 4rem;

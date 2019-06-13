@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 import { PropTypes, inject, observer } from "mobx-react";
 import wheels from "../../assets/wheels.svg";
 import { Link } from "react-router-dom";
-// import video from "../../assets/headervideo.mp4";
+import video from "../../assets/Header.mp4";
 
 const Header = ({ verhalenStore }) => {
   const { verhalen } = verhalenStore;
@@ -54,11 +54,11 @@ const Header = ({ verhalenStore }) => {
               <p>Scroll om te ontdekken</p>
             </div>
           </div>
+          <img src={wheels} alt="wheels" className={styles.wheels} />
         </div>
-        <img src={wheels} alt="wheels" className={styles.wheels} />
-        {/* <video width="100%" controls autoPlay>
+        <video width="100%" loop autoPlay className={styles.treinvideo}>
           <source src={video} type="video/mp4" />
-        </video> */}
+        </video>
         <div className={styles.redline} />
       </section>
     </>

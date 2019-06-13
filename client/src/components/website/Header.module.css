@@ -1,5 +1,7 @@
 .container {
     composes: container from "../../styles/index.css";
+    position: relative;
+    z-index: 5;
     height: 100vh;
     display: grid;
     grid-template-columns:auto auto 1fr max-content;
@@ -72,6 +74,13 @@
     text-decoration: none;
 }
 
+
+.treinvideo{
+    position: relative;
+    z-index: 1;
+    margin-top: -40rem;
+
+}
 
 
 .hide{
@@ -166,6 +175,8 @@
 
 .redline{
     grid-area: redline;
+    position: relative;
+    z-index: 6;
     border:none;
     border-bottom: 0.4rem solid var(--pink-color);
     transform: translateY(-10rem);
@@ -235,9 +246,9 @@
   }
 
 
-  .train{
-      position: absolute;
-      transform: translateY(-30rem);
+  .treinvideo{
+     transform: translateY(-10rem);
+
   }
 
   .headerimg{
@@ -249,9 +260,9 @@
 }
 
   .wheels{
-      z-index: 1;
-      margin-bottom: -13.5rem;
-      transform: translate(75rem, -25rem);
+      grid-column: 3/5;
+      grid-row: 5/6;
+      margin-top: 1rem;
   }
 
   .people{
@@ -261,6 +272,3 @@
   }
 
 
-  .wheels{
-      transform: translate(57rem, -38rem);
-  }

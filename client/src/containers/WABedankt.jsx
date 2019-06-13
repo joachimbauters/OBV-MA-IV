@@ -41,7 +41,7 @@ class WABedankt extends Component {
               Wij zullen ons laten inspireren door jouw verhaal
             </p>
             <div className={styles.buttons}>
-              <Link>
+              <Link to={`/jullieverhalen`}>
                 <Button type="outline" text="Lees verhalen van passagiers" />
               </Link>
               <a href="https://www.operaballet.be/nl/programma/2018-2019">

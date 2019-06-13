@@ -1,0 +1,430 @@
+.wrapper{
+    composes: wrapper from "../styles/index.css";
+}
+
+.bluebackground{
+    background-color: var(--blue-color);
+}
+
+.containerlist  {
+    composes: container from "../styles/index.css";
+    display: grid;
+    grid-template-columns: 1fr 2fr 5fr;
+    grid-gap: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    grid-template-areas: 
+    'logo nav taal'
+    'title title .'
+    'input input tabs';
+
+  }
+
+  .containerfooter{
+    composes: container from "../styles/index.css";
+    padding-top: 0.1rem;
+    padding-bottom: 4rem;
+
+  }
+
+
+
+  .container{
+    composes: container from "../styles/index.css";
+
+  }
+
+  .tabs{
+    grid-area: tabs;
+  }
+
+  .logo{
+      grid-area: logo;
+  }
+
+  .inputfield{
+      grid-area: input;
+      border: 0.4rem solid var(--pink-color);
+      background-color: transparent;
+      padding: 1rem;
+      color: var(--white-color);
+      outline: none;
+  }
+
+  .inputfield::placeholder{
+      color: var(--white-color);
+      opacity: 0.5;
+  }
+
+  .toggle {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+  }
+
+  .togglelabel{
+    display: inline-block;
+    color: var(--pink-color);
+    border: 0.4rem solid var(--pink-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    width: 15rem;
+    padding: 1.3rem;
+    background-color: transparent;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  .toggle:checked + .togglelabel {
+    background-color: var(--pink-color);
+    color: var(--white-color);
+  }
+
+  .hide{
+    composes: hide from "../styles/index.css";
+  }
+
+  .gridnav{
+      align-self: center;
+      justify-self: center;
+  }
+
+  .link{
+    text-decoration: none;
+}
+
+  .nav{
+    grid-area: nav;
+    width: 22rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.nav li{
+    color: var(--white-color);
+    font-size: 1.8rem;
+    padding: 0.5rem;
+}
+
+.nav li:hover{
+    background-color: var(--pink-color);
+    cursor: pointer;
+}
+
+.languagepickerbutton{
+    background-color: transparent;
+    color: var(--white-color);
+    padding: 1.4rem;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+}
+
+.languagepickerbutton::after{
+    content: url("../assets/arrowdown.svg");
+    margin-left: 1rem;
+
+  }
+
+.droppicker{
+    grid-area: taal;
+    justify-self: flex-end;
+    position: relative;
+    display: inline-block;
+}
+
+.droppicker:hover .languagepicker {display: block;}
+
+.droppicker:hover .languagepickerbutton {background-color: transparent;}
+
+.languagepicker{
+    display: none;
+  position: absolute;
+  background-color: transparent;
+  color: var(--white-color);
+  min-width: 5rem;
+  font-size: 1.4rem;
+  z-index: 1;
+}
+
+.languagepicker p{
+    margin-top: 1rem;
+}
+
+.pagetitel{
+    color: var(--white-color);
+    font-size: 3.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    grid-area: title;
+
+    margin-top: 4rem;
+}
+
+  .flexcards{
+      margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loadmore{
+    height: 5rem;
+    width: 20rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    background-color: var(--pink-color);
+    border: none;
+    color: var(--white-color);
+    border-radius: 0rem 2rem 0rem;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+}
+
+
+  .cardgrid{
+    display: grid;
+    grid-template-columns: 2fr 3fr ;
+    grid-gap: 2rem;
+    height: 30rem;
+    grid-template-areas: 
+    ' vraag vraag '
+    ' verhaal verhaal '
+    ' gegevens gegevens '
+}
+
+.cardgrid2{
+    display: grid;
+    grid-template-columns: 3fr 2fr ;
+    grid-gap: 3rem;
+    grid-template-areas: 
+    ' vraag  voorgesteld'
+    ' verhaal voorgesteld '
+    ' gegevens voorgesteld '
+    ' rating leesmeer2'
+}
+
+.gegevensgrid{
+    grid-area: gegevens;
+    display: grid;
+    grid-template-columns: max-content 3fr; 
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'persoon locatie'
+    '. leesmeer'
+
+}
+
+.operaverhalentitel{
+    color: var(--pink-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+}
+
+.vergelijkbareopera{
+    grid-area: voorgesteld;
+}
+
+.operaimg{
+    composes: img-responsive from "../styles/index.css";
+    margin-bottom: 2rem;
+}
+
+.locatie{
+    grid-area: locatie;
+    color: var(--pink-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.leesmeer{
+    grid-area: leesmeer;
+    background-color: var(--pink-color);
+    border: none;
+    width: 10rem;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:  var(--white-color);
+    justify-self: flex-end;
+    cursor: pointer;
+    outline: none;
+}
+
+.leesmeer2{
+    grid-area: leesmeer2;
+    background-color: var(--pink-color);
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:  var(--white-color);
+    justify-self: flex-end;
+    cursor: pointer;
+    outline: none;
+}
+
+.card{
+    flex: 0 0  auto;
+    margin: 3rem;
+    width: 50rem;
+    padding:4rem;
+    border-radius: 3rem 0rem 3rem;
+    background-color: var(--white-color);
+    box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+    background-repeat: no-repeat;
+}
+
+.cardgrow{
+    flex: 0 0  auto;
+    margin: 3rem;
+    padding:4rem;
+    border-radius: 3rem 0rem 3rem;
+    background-color: var(--white-color);
+    box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+    background-repeat: no-repeat;
+    grid-column: 1/3;
+}
+
+.vraag{
+    font-size: 1.6rem;
+    color: #494949;
+    font-weight: 700;
+    grid-area: vraag;
+    line-height: 2.4rem;
+}
+
+.verhaal{
+    grid-area: verhaal;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--gray-color);
+    line-height: 2.4rem;
+
+    background-image: url("../assets/quotation-mark.svg");
+    background-repeat: no-repeat;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    
+}
+
+
+.persoon{
+    grid-area: persoon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.naam{
+    color: var(--pink-color);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.leeftijd{
+    color: var(--gray-color);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+
+
+
+.footergrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 10rem;
+}
+
+.footertitle{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footeritem{
+    color: var(--white-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+.socialsbox{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 6rem;
+    margin-bottom: 2rem;
+}
+
+.socialstext{
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    opacity: 0.5;
+
+}
+
+.socialsflex{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 17rem;
+}
+
+.jaar{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white-color);
+    opacity: 0.2;
+}
+
+.linkobv{
+    text-decoration: none;
+}
+
+.ratingbuttn{
+    background: transparent;
+    border: 0.4rem solid var(--blue-color);
+    height: 5rem;
+    width: 8rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+    outline: none;
+    cursor: pointer;
+}
+
+.ratingbuttn p{
+        color: var(--blue-color);
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-top: 0.5rem;
+}
+
+.ratingbuttns{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 40rem;
+}

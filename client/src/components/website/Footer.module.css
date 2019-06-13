@@ -71,6 +71,10 @@
     transform: translateY(-4rem);
 }
 
+.link{
+    text-decoration: none;
+}
+
 .sponsors{
     display: grid;
     margin: auto;
@@ -128,4 +132,8 @@
     font-weight: 700;
     color: var(--white-color);
     opacity: 0.2;
+}
+
+.linkobv{
+    text-decoration: none;
 }

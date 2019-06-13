@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { PropTypes, inject, observer } from "mobx-react";
+import wheels from "../../assets/wheels.svg";
+import { Link } from "react-router-dom";
+// import video from "../../assets/headervideo.mp4";
 
 const Header = ({ verhalenStore }) => {
   const { verhalen } = verhalenStore;
@@ -15,8 +18,12 @@ const Header = ({ verhalenStore }) => {
           </h1>
           <nav className={styles.gridnav}>
             <ul className={styles.nav}>
-              <li>Home</li>
-              <li>Verhalen</li>
+              <Link to={`/`} className={styles.link}>
+                <li>Home</li>
+              </Link>
+              <Link to={`/jullieverhalen`} className={styles.link}>
+                <li>Verhalen</li>
+              </Link>
             </ul>
           </nav>
           <div className={styles.aantalreizigersflex}>
@@ -48,6 +55,10 @@ const Header = ({ verhalenStore }) => {
             </div>
           </div>
         </div>
+        <img src={wheels} alt="wheels" className={styles.wheels} />
+        {/* <video width="100%" controls autoPlay>
+          <source src={video} type="video/mp4" />
+        </video> */}
         <div className={styles.redline} />
       </section>
     </>

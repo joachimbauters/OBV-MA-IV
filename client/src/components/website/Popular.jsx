@@ -32,7 +32,7 @@ const Popular = ({ verhalenStore }) => {
                   <article className={styles.cardgrid}>
                     <h1 className={styles.vraag}>{verhaal.vraag}</h1>
                     <p className={styles.verhaal}>
-                      {TextAbstract(verhaal.verhaal, 300)}
+                      {TextAbstract(verhaal.verhaal, 200)}
                     </p>
                     <div className={styles.gegevensgrid}>
                       <div className={styles.persoon}>
@@ -45,7 +45,6 @@ const Popular = ({ verhalenStore }) => {
                         {verhaal.date} op {verhaal.typevervoer}
                         {verhaal.voertuignummer}, stoel {verhaal.stoelnummer}
                       </p>
-                      <button className={styles.leesmeer}>Lees meer</button>
                     </div>
                   </article>
                 </li>

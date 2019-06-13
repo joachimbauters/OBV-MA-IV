@@ -12,6 +12,7 @@ import instagram from "../../assets/instagram.svg";
 import twitter from "../../assets/twitter.svg";
 import facebook from "../../assets/facebook.svg";
 import youtube from "../../assets/youtube.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -86,17 +87,45 @@ const Footer = () => {
               <div>
                 <h2 className={styles.footertitle}>Opera on wheels</h2>
                 <ul>
-                  <li className={styles.footeritem}>Home</li>
-                  <li className={styles.footeritem}>Verhalen</li>
+                  <Link to={`/`} className={styles.link}>
+                    <li className={styles.footeritem}>Home</li>
+                  </Link>
+                  <Link to={`/jullieverhalen`} className={styles.link}>
+                    <li className={styles.footeritem}>Verhalen</li>
+                  </Link>
                 </ul>
               </div>
               <div>
                 <h2 className={styles.footertitle}>OBV vlaanderen</h2>
                 <ul>
-                  <li className={styles.footeritem}>Het huis</li>
-                  <li className={styles.footeritem}>Kalender</li>
-                  <li className={styles.footeritem}>Steun</li>
-                  <li className={styles.footeritem}>Contact</li>
+                  <a
+                    href="https://www.operaballet.be/nl/het-huis/blog"
+                    target="_blank" // eslint-disable-line
+                    className={styles.linkobv}
+                  >
+                    <li className={styles.footeritem}>Het huis</li>
+                  </a>
+                  <a
+                    href="https://www.operaballet.be/nl/programma/2018-2019?view=calendar#jump"
+                    target="_blank" // eslint-disable-line
+                    className={styles.linkobv}
+                  >
+                    <li className={styles.footeritem}>Kalender</li>
+                  </a>
+                  <a
+                    href="https://www.operaballet.be/nl/het-huis/steun/giften"
+                    target="_blank" // eslint-disable-line
+                    className={styles.linkobv}
+                  >
+                    <li className={styles.footeritem}>Steun</li>
+                  </a>
+                  <a
+                    href="https://www.operaballet.be/nl/het-huis/steun/giften"
+                    target="_blank" // eslint-disable-line
+                    className={styles.linkobv}
+                  >
+                    <li className={styles.footeritem}>Contact</li>
+                  </a>
                 </ul>
               </div>
               <div>
@@ -111,35 +140,75 @@ const Footer = () => {
                 <div className={styles.socialsbox}>
                   <p className={styles.socialstext}>Opera:</p>
                   <ul className={styles.socialsflex}>
-                    <li>
-                      <img src={facebook} alt="facebook" />
-                    </li>
-                    <li>
-                      <img src={twitter} alt="twitter" />
-                    </li>
-                    <li>
-                      <img src={instagram} alt="instagram" />
-                    </li>
-                    <li>
-                      <img src={youtube} alt="youtube" />
-                    </li>
+                    <a
+                      href="https://www.facebook.com/operavlaanderen"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={facebook} alt="facebook" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://twitter.com/operaballetvl"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={twitter} alt="twitter" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/operavlaanderen/"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={instagram} alt="instagram" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.youtube.com/operaballetvlaanderen"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={youtube} alt="youtube" />
+                      </li>
+                    </a>
                   </ul>
                 </div>
                 <div className={styles.socialsbox}>
                   <p className={styles.socialstext}>Ballet:</p>
                   <ul className={styles.socialsflex}>
-                    <li>
-                      <img src={facebook} alt="facebook" />
-                    </li>
-                    <li>
-                      <img src={twitter} alt="twitter" />
-                    </li>
-                    <li>
-                      <img src={instagram} alt="instagram" />
-                    </li>
-                    <li>
-                      <img src={youtube} alt="youtube" />
-                    </li>
+                    <a
+                      href="https://www.facebook.com/balletvlaanderen"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={facebook} alt="facebook" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://twitter.com/operaballetvl"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={twitter} alt="twitter" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/balletvlaanderen/"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={instagram} alt="instagram" />
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.youtube.com/operaballetvlaanderen"
+                      target="_blank" // eslint-disable-line
+                    >
+                      <li>
+                        <img src={youtube} alt="youtube" />
+                      </li>
+                    </a>
                   </ul>
                 </div>
               </div>

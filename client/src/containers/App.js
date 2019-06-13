@@ -4,6 +4,7 @@ import "./App.module.css";
 
 import { ROUTES } from "../constants";
 import Home from "./Home";
+import Verhalen from "./Verhalen";
 import WAHome from "./WAHome";
 import WATaal from "./WATaal";
 import WAVerhalen from "./WAVerhalen";
@@ -17,6 +18,7 @@ function App() {
     <main>
       <Switch>
         <Route path={ROUTES.home} exact strict component={Home} />
+        <Route path={ROUTES.verhalen} exact strict component={Verhalen} />
         <Route
           path={ROUTES.application}
           exact

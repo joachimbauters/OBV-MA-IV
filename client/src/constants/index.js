@@ -1,5 +1,6 @@
 export const ROUTES = {
   home: `/`,
+  verhalen: `/jullieverhalen`,
   qrgenerator: `/qrgenerator`,
   application: `/application/:typevervoer/:voertuignummer/:stoelnummer`,
   applicationtaal: `/taal/:typevervoer/:voertuignummer/:stoelnummer`,

@@ -46,6 +46,7 @@
     color: #494949;
     font-weight: 700;
     grid-area: vraag;
+    line-height: 2.4rem;
 }
 
 .verhaal{
@@ -54,6 +55,11 @@
     font-weight: 400;
     color: var(--gray-color);
     line-height: 2.4rem;
+
+    background-image: url("../../assets/quotation-mark.svg");
+    background-repeat: no-repeat;
+    padding-left: 2rem;
+    padding-top: 3rem;
 }
 
 .persoon{
@@ -103,7 +109,7 @@
     color: var(--pink-color);
     font-size: 1.5rem;
     font-weight: 300;
-
+    align-self: center;
     justify-self: flex-end;
 }
 
@@ -112,6 +118,7 @@
     background-color: var(--pink-color);
     border: none;
     width: 10rem;
+    height: 4rem;
     padding: 1rem;
     font-size: 1.4rem;
     font-weight: 700;

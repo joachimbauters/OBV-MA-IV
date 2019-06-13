@@ -13,6 +13,6 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "seed": "node seeder.js"
+    "seed": "node index.js"
   }
 }

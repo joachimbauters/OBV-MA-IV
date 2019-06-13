@@ -11,6 +11,8 @@ exports.create = async (req, res) => {
     stoelnummer: req.body.stoelnummer
   });
 
+  console.log('hey');
+
   qrcode
     .save()
     .then(qrcode => res.send(qrcode))

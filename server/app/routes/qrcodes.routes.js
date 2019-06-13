@@ -1,5 +1,5 @@
 module.exports = app => {
-  const controller = require('../controllers/qrcodes.controller.js');
+  const controller = require('../controllers/qrcodes.Controller.js');
 
   app.post('/api/qrcode', controller.create);
   app.get('/api/qrcode', controller.findAll);

@@ -34,15 +34,19 @@ const Popular = ({ verhalenStore }) => {
                     <p className={styles.verhaal}>
                       {TextAbstract(verhaal.verhaal, 300)}
                     </p>
-                    <div className={styles.persoon}>
-                      <h2 className={styles.naam}>{verhaal.naam}</h2>
-                      <p className={styles.leeftijd}>{verhaal.leeftijd} jaar</p>
+                    <div className={styles.gegevensgrid}>
+                      <div className={styles.persoon}>
+                        <h2 className={styles.naam}>{verhaal.naam}</h2>
+                        <p className={styles.leeftijd}>
+                          {verhaal.leeftijd} jaar
+                        </p>
+                      </div>
+                      <p className={styles.locatie}>
+                        {verhaal.date} op {verhaal.typevervoer}
+                        {verhaal.voertuignummer}, stoel {verhaal.stoelnummer}
+                      </p>
+                      <button className={styles.leesmeer}>Lees meer</button>
                     </div>
-                    <p className={styles.locatie}>
-                      {verhaal.date} op {verhaal.typevervoer}
-                      {verhaal.voertuignummer}, stoel {verhaal.stoelnummer}
-                    </p>
-                    <button className={styles.leesmeer}>Lees meer</button>
                   </article>
                 </li>
               ))}

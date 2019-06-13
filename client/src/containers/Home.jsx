@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/website/Header";
 import Intro from "../components/website/Intro";
 import Populair from "../components/website/Popular";
+import Footer from "../components/website/Footer";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Header />
       <Intro />
       <Populair />
+      <Footer />
     </>
   );
 };

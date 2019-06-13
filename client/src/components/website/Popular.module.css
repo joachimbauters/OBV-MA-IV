@@ -4,6 +4,7 @@
 
 .container {
     composes: container from "../../styles/index.css";
+    margin-top: 3rem;
   }
 
   .introtitel{
@@ -27,6 +28,7 @@
     -webkit-overflow-scrolling: touch;
     position: relative;
     margin-top: 3rem;
+    margin-right: -5rem;
 }
 
 .card{
@@ -71,17 +73,29 @@
     color: var(--gray-color);
     font-weight: 500;
     font-size: 1.3rem;
+    margin-left: 1rem;
 }
 
 .cardgrid{
     display: grid;
-    grid-template-columns: max-content 3fr ;
+    grid-template-columns: 2fr 3fr ;
     grid-gap: 2rem;
+    height: 30rem;
     grid-template-areas: 
     ' vraag vraag '
     ' verhaal verhaal '
-    ' persoon locatie '
-    ' rating leesmeer ';
+    ' gegevens gegevens '
+}
+
+.gegevensgrid{
+    grid-area: gegevens;
+    display: grid;
+    grid-template-columns: max-content 3fr; 
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'persoon locatie'
+    '. leesmeer'
+
 }
 
 .locatie{
@@ -103,5 +117,19 @@
     font-weight: 700;
     color:  var(--white-color);
     justify-self: flex-end;
+    cursor: pointer;
+    outline: none;
+}
+
+.ontdekmeer{
+    height: 5rem;
+    width: 20rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    background-color: var(--pink-color);
+    border: none;
+    color: var(--white-color);
+    border-radius: 0rem 2rem 0rem;
+    outline: none;
     cursor: pointer;
 }

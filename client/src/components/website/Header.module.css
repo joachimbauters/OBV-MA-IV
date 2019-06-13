@@ -124,6 +124,7 @@
     color: transparent;
     opacity: 0.2;
     letter-spacing: 0.2rem;
+    margin-right: 2rem;
     -webkit-text-stroke: 0.177rem var(--white-color);
   }
 
@@ -132,6 +133,7 @@
     font-weight: 700;
     font-size: 4.6rem;
     letter-spacing: 0.2rem;
+    margin-right: 2rem;
 
 }
 
@@ -148,7 +150,6 @@
     flex-flow: column nowrap;
     align-content: flex-end;
     justify-content: space-around;
-    width: 43rem;
     height: 20rem;
 }
 

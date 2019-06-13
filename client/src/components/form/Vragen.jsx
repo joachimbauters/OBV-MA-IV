@@ -30,6 +30,7 @@ class Vragen extends Component {
                     value={vraag.id}
                     className={styles.switchfieldinput}
                     onChange={this.props.handleChange}
+                    required
                   />
                   <label htmlFor={vraag.id} className={styles.switchfieldlabel}>
                     {vraag.vraag}

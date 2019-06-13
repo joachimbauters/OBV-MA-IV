@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-import styles from "./WAForm.module.css";
 import { withRouter } from "react-router-dom";
+import styles from "./WAForm.module.css";
+import vragen from "../constants/vragen.json";
+import { inject, observer, PropTypes } from "mobx-react";
 
 import Name from "../components/form/Name";
 import Leeftijd from "../components/form/Leeftijd";
@@ -28,11 +29,7 @@ class WAForm extends Component {
   }
 
   handleChange(event) {
-    console.log(event.target);
-
     const { name, value } = event.target;
-    console.log(name, value);
-
     this.setState({
       [name]: value
     });
@@ -40,15 +37,41 @@ class WAForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { naam, leeftijd, vraag, privacy, verhaal } = this.state;
-    alert(`Your story details: \n 
-      Naam: ${naam} \n 
-      Leeftijd: ${leeftijd} \n
-      Vraag: ${vraag} \n
-      privacy: ${privacy} \n
-      verhaal: ${verhaal}`);
+    const { naam, leeftijd, vraag, verhaal } = this.state;
+    const {
+      verhalenStore,
+      typevervoer,
+      voertuignummer,
+      stoelnummer,
+      history
+    } = this.props;
+    const arr1 = vragen.filter(element => element.id == vraag); // eslint-disable-line
+    let date = new Date();
+    var options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric"
+    };
+    const newDate = date.toLocaleString("nl-BE", options);
 
-    this.props.history.push("/bedankt");
+    arr1.forEach(vraag => {
+      verhalenStore
+        .addVerhaal({
+          naam: naam,
+          leeftijd: leeftijd,
+          vraag: vraag.vraag,
+          verhaal: verhaal,
+          typevervoer: typevervoer,
+          voertuignummer: voertuignummer,
+          stoelnummer: stoelnummer,
+          date: newDate
+        })
+        .then(() => {
+          history.push("/bedankt");
+        });
+    });
   };
 
   _next() {
@@ -188,6 +211,7 @@ class WAForm extends Component {
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
               verhaal={this.state.verhaal}
+              vraag={this.state.vraag}
               typevervoer={typevervoer}
               voertuignummer={voertuignummer}
               stoelnummer={stoelnummer}
@@ -216,4 +240,8 @@ class WAForm extends Component {
   }
 }
 
-export default withRouter(WAForm);
+WAForm.propTypes = {
+  verhalenStore: PropTypes.observableObject.isRequired
+};
+
+export default inject(`verhalenStore`)(observer(withRouter(WAForm)));

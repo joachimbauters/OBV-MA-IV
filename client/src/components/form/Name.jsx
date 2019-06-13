@@ -40,6 +40,7 @@ class Name extends Component {
               name="naam"
               value={this.props.naam}
               onChange={this.props.handleChange}
+              required
             />
           </div>
           <div className={styles.voorwaarden}>
@@ -49,6 +50,7 @@ class Name extends Component {
                 id="voorwaarden"
                 name="voorwaarden"
                 className={styles.checkbox}
+                required
               />
               <span className={styles.checkmark} />
             </label>

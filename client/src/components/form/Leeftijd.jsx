@@ -30,6 +30,7 @@ class Leeftijd extends Component {
                 max="130"
                 value={this.props.leeftijd}
                 onChange={this.props.handleChange}
+                required
               />
               <p className={styles.jaar}>Jaar</p>
             </div>

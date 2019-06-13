@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Verhaal.module.css";
 import Chart from "./Chart";
+import vragen from "../../constants/vragen.json";
 
 class Verhaal extends Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class Verhaal extends Component {
       return null;
     }
 
+    const arr1 = vragen.filter(element => element.id == this.props.vraag); // eslint-disable-line
+
     return (
       <>
         <div className={styles.container}>
@@ -31,10 +34,9 @@ class Verhaal extends Component {
             <span className={styles.outline}>Vertel ons</span> jouw verhaal
           </h1>
           <p className={styles.text}>
-            Ballerina’s kunnen door middel van gebaren emoties uitdrukken,{" "}
-            <span className={styles.highlight}>
-              maar wat is het mooiste gebaar dat iemand voor u heeft gedaan?
-            </span>
+            {arr1.map(vraag => (
+              <p>{vraag.vraag}</p>
+            ))}
           </p>
           <div className={styles.area}>
             <textarea
@@ -43,6 +45,7 @@ class Verhaal extends Component {
               maxLength={this.state.maxLength}
               value={this.state.currentTweet}
               name="verhaal"
+              required
               onChange={e => {
                 this.setCurrentTweet(e.currentTarget.value);
                 this.props.handleChange(e);

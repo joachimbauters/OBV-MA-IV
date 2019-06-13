@@ -5,6 +5,19 @@ import styles from "./Popular.module.css";
 const Popular = ({ verhalenStore }) => {
   const { verhalen } = verhalenStore;
 
+  const TextAbstract = (text, length) => {
+    if (text == null) {
+      return "";
+    }
+    if (text.length <= length) {
+      return text;
+    }
+    text = text.substring(0, length);
+    const last = text.lastIndexOf(" ");
+    text = text.substring(0, last);
+    return text + "...";
+  };
+
   return (
     <>
       <section className={styles.wrapper}>
@@ -13,22 +26,23 @@ const Popular = ({ verhalenStore }) => {
             Populaire <span className={styles.intropink}>verhalen</span>
           </h1>
           {verhalen.length > 0 ? (
-            <ul>
+            <ul className={styles.flexcards}>
               {verhalen.slice(0, 5).map(verhaal => (
-                <li key={verhaal.id}>
-                  <article>
+                <li key={verhaal.id} className={styles.card}>
+                  <article className={styles.cardgrid}>
                     <h1 className={styles.vraag}>{verhaal.vraag}</h1>
-                    <p className={styles.verhaal}>{verhaal.verhaal}</p>
-                    <div>
-                      <div>
-                        <h2 className={styles.naam}>{verhaal.naam}</h2>
-                        <p className={styles.leeftijd}>{verhaal.leeftijd}</p>
-                      </div>
-                      <p className={styles.locatie}>
-                        {verhaal.date} op {verhaal.typevervoer}
-                        {verhaal.voertuignummer}, stoel {verhaal.stoelnummer}
-                      </p>
+                    <p className={styles.verhaal}>
+                      {TextAbstract(verhaal.verhaal, 300)}
+                    </p>
+                    <div className={styles.persoon}>
+                      <h2 className={styles.naam}>{verhaal.naam}</h2>
+                      <p className={styles.leeftijd}>{verhaal.leeftijd} jaar</p>
                     </div>
+                    <p className={styles.locatie}>
+                      {verhaal.date} op {verhaal.typevervoer}
+                      {verhaal.voertuignummer}, stoel {verhaal.stoelnummer}
+                    </p>
+                    <button className={styles.leesmeer}>Lees meer</button>
                   </article>
                 </li>
               ))}
@@ -36,7 +50,7 @@ const Popular = ({ verhalenStore }) => {
           ) : (
             <p>Tijdelijk geen verhalen beschikbaar :(</p>
           )}
-          <button>Ontdek meer verhalen</button>
+          <button className={styles.ontdekmeer}>Ontdek meer verhalen</button>
         </div>
       </section>
     </>

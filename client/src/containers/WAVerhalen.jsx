@@ -42,9 +42,13 @@ class WAVerhalen extends Component {
 
   render() {
     const { scroll } = this.state;
-    const { verhalenStore } = this.props;
+    const {
+      verhalenStore,
+      typevervoer,
+      voertuignummer,
+      stoelnummer
+    } = this.props;
     const { verhalen } = verhalenStore;
-    const { typevervoer, voertuignummer, stoelnummer } = this.props;
     const filter = verhalen.filter(item => item.typevervoer == typevervoer); // eslint-disable-line
     const filter1 = filter.filter(
       item => item.voertuignummer == voertuignummer // eslint-disable-line
@@ -102,11 +106,13 @@ class WAVerhalen extends Component {
                 ))}
               </div>
             ) : (
-              <article className={styles.cell}>
-                <p className={styles.noseat}>
-                  Jij kan de eerste zijn die zijn verhaal deelt op deze zetel!
-                </p>
-              </article>
+              <div className="siema">
+                <article className={styles.cell}>
+                  <p className={styles.noseat}>
+                    Jij kan de eerste zijn die zijn verhaal deelt op deze zetel!
+                  </p>
+                </article>
+              </div>
             )}
             <div className={styles.button}>
               <Link

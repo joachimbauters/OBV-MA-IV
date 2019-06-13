@@ -8,7 +8,11 @@ const Qrcode = ({ code }) => {
   };
   return (
     <>
-      <QrCode value={link(code.type, code.voertuignummer, code.stoelnummer)} />
+      <QrCode
+        value={link(code.type, code.voertuignummer, code.stoelnummer)}
+        bgColor="transparent"
+        fgColor="#FFFFFF"
+      />
     </>
   );
 };

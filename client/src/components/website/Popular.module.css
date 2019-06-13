@@ -19,15 +19,89 @@
     -webkit-text-stroke: 0rem var(--blue-color);
 }
 
+.flexcards{
+    display: flex;
+    flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.card{
+    flex: 0 0  auto;
+    margin: 3rem;
+    width: 50rem;
+    padding:4rem;
+    border-radius: 3rem 0rem 3rem;
+    background-color: var(--white-color);
+    box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+}
+
 .vraag{
     font-size: 1.6rem;
     color: #494949;
     font-weight: 700;
+    grid-area: vraag;
 }
 
 .verhaal{
-    font-size: 1.5rem;
+    grid-area: verhaal;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--gray-color);
     line-height: 2.4rem;
+}
+
+.persoon{
+    grid-area: persoon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.naam{
+    color: var(--pink-color);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.leeftijd{
+    color: var(--gray-color);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.cardgrid{
+    display: grid;
+    grid-template-columns: max-content 3fr ;
+    grid-gap: 2rem;
+    grid-template-areas: 
+    ' vraag vraag '
+    ' verhaal verhaal '
+    ' persoon locatie '
+    ' rating leesmeer ';
+}
+
+.locatie{
+    grid-area: locatie;
+    color: var(--pink-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    justify-self: flex-end;
+}
+
+.leesmeer{
+    grid-area: leesmeer;
+    background-color: var(--pink-color);
+    border: none;
+    width: 10rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:  var(--white-color);
+    justify-self: flex-end;
+    cursor: pointer;
 }

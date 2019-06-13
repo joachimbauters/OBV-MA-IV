@@ -22,6 +22,7 @@ class Verhaal {
     this.voertuignummer = voertuignummer;
     this.stoelnummer = stoelnummer;
     this.date = date;
+    this.rating = {};
   }
 
   get values() {
@@ -46,6 +47,7 @@ class Verhaal {
   setVoertuignummer = value => (this.voertuignummer = value);
   setStoelnummer = value => (this.stoelnummer = value);
   setDate = value => (this.date = value);
+  setRating = value => (this.rating = value);
 
   updateFromServer = values => {
     this.setId(values._id);
@@ -57,6 +59,7 @@ class Verhaal {
     this.setVoertuignummer(values.voertuignummer);
     this.setStoelnummer(values.stoelnummer);
     this.setDate(values.date);
+    this.setRating(values.rating);
   };
 }
 
@@ -70,6 +73,7 @@ decorate(Verhaal, {
   stoelnummer: observable,
   voertuignummer: observable,
   date: observable,
+  rating: observable,
   values: computed,
   setId: action,
   setNaam: action,
@@ -79,7 +83,8 @@ decorate(Verhaal, {
   setTypevervoer: action,
   setVoertuignummer: action,
   setStoelnummer: action,
-  setDate: action
+  setDate: action,
+  setRating: action
 });
 
 export default Verhaal;

@@ -486,6 +486,7 @@
     grid-column: 3/5;
     grid-row: 5/6;
     margin-top: 1rem;
+    width: 40rem;
 }
 }
  
@@ -494,6 +495,7 @@
     grid-column: 3/5;
     grid-row: 5/6;
     margin-top: 1rem;
+    width: 50rem;
 }
 }
 

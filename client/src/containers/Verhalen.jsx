@@ -70,7 +70,7 @@ class Verhalen extends Component {
                 value="recent"
                 className={styles.toggle}
               />
-              <label htmlFor="recent" className={styles.togglelabel}>
+              <label htmlFor="recent" className={styles.togglelabelrecent}>
                 Recent
               </label>
               <input
@@ -79,7 +79,7 @@ class Verhalen extends Component {
                 id="populair"
                 className={styles.toggle}
               />
-              <label htmlFor="populair" className={styles.togglelabel}>
+              <label htmlFor="populair" className={styles.togglelabelpopulair}>
                 Populair
               </label>
             </div>

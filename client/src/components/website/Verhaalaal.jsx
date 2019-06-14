@@ -78,19 +78,35 @@ class Verhaalaal extends Component {
                 </div>
                 <div className={styles.ratingbuttns}>
                   <button className={styles.ratingbuttn}>
-                    <img src={verliefd} alt={verhaal.rating.verliefd.type} />
+                    <img
+                      src={verliefd}
+                      alt={verhaal.rating.verliefd.type}
+                      className={styles.emoji}
+                    />
                     <p>{verhaal.rating.verliefd.value}</p>
                   </button>
                   <button className={styles.ratingbuttn}>
-                    <img src={verbaasd} alt={verhaal.rating.verbaasd.type} />
+                    <img
+                      src={verbaasd}
+                      alt={verhaal.rating.verbaasd.type}
+                      className={styles.emoji}
+                    />
                     <p>{verhaal.rating.verbaasd.value}</p>
                   </button>
                   <button className={styles.ratingbuttn}>
-                    <img src={droevig} alt={verhaal.rating.droevig.type} />
+                    <img
+                      src={droevig}
+                      alt={verhaal.rating.droevig.type}
+                      className={styles.emoji}
+                    />
                     <p>{verhaal.rating.droevig.value}</p>
                   </button>
                   <button className={styles.ratingbuttn}>
-                    <img src={grappig} alt={verhaal.rating.grappig.type} />
+                    <img
+                      src={grappig}
+                      alt={verhaal.rating.grappig.type}
+                      className={styles.emoji}
+                    />
                     <p>{verhaal.rating.grappig.value}</p>
                   </button>
                 </div>

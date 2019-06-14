@@ -6,19 +6,61 @@
     background-color: var(--blue-color);
 }
 
-.containerlist  {
-    composes: container from "../styles/index.css";
-    display: grid;
-    grid-template-columns: 1fr 2fr 5fr;
-    grid-gap: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    grid-template-areas: 
-    'logo nav taal'
-    'title title .'
-    'input input tabs';
 
+  @media only screen and (min-width: 0){
+    .containerlist  {
+        composes: container from "../styles/index.css";
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        grid-template-areas: 
+        'logo taal'
+        'nav nav'
+        'title title'
+        'input input'
+        'tabs tabs';
+    
+      }
   }
+
+  @media only screen and (min-width: 45em){
+    .containerlist  {
+        composes: container from "../styles/index.css";
+        display: grid;
+        grid-template-columns: 1fr 2fr 5fr;
+        grid-gap: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        grid-template-areas: 
+        'logo nav taal'
+        'title title .'
+        'input input tabs';
+    
+      }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .containerlist  {
+        composes: container from "../styles/index.css";
+        display: grid;
+        grid-template-columns: 1fr 2fr 5fr;
+        grid-gap: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        grid-template-areas: 
+        'logo nav taal'
+        'title title .'
+        'input input tabs';
+    
+      }
+  }
+
+
+  
+
+  
 
   .containerfooter{
     composes: container from "../styles/index.css";
@@ -27,15 +69,20 @@
 
   }
 
+  
+
 
 
   .container{
     composes: container from "../styles/index.css";
+    padding-left: 1rem;
+    padding-right: 1rem;
 
   }
 
   .tabs{
     grid-area: tabs;
+    display: flex;
   }
 
   .logo{
@@ -65,8 +112,10 @@
     overflow: hidden;
   }
 
-  .togglelabel{
-    display: inline-block;
+  .togglelabelrecent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     color: var(--pink-color);
     border: 0.4rem solid var(--pink-color);
     font-size: 1.4rem;
@@ -79,7 +128,44 @@
     cursor: pointer;
   }
 
-  .toggle:checked + .togglelabel {
+  .togglelabelrecent::after{
+    content: url("../assets/recent_noselect.svg");
+  }
+
+  .togglelabelpopulair{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--pink-color);
+    border: 0.4rem solid var(--pink-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    width: 15rem;
+    padding: 1.3rem;
+    background-color: transparent;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  .togglelabelpopulair::after{
+    content: url("../assets/popular.svg");
+  }
+
+  .toggle:checked + .togglelabelpopulair::after{
+    content: url("../assets/popular_select.svg");
+  }
+
+  .toggle:checked + .togglelabelrecent::after{
+    content: url("../assets/recent.svg");
+  }
+
+  .toggle:checked + .togglelabelrecent {
+    background-color: var(--pink-color);
+    color: var(--white-color);
+  }
+
+  .toggle:checked + .togglelabelpopulair {
     background-color: var(--pink-color);
     color: var(--white-color);
   }
@@ -171,8 +257,8 @@
 @media only screen and (min-width: 0){
     .flexcards{
         margin-top: 4rem;
-      display: grid;
-      grid-template-columns: 1fr;
+        display: flex;
+        flex-flow: column nowrap;
   }
   }
 
@@ -192,54 +278,173 @@
   }
   }
 
-.loadmore{
-    height: 5rem;
-    width: 20rem;
-    margin-top: 2rem;
-    font-weight: 700;
-    background-color: var(--pink-color);
-    border: none;
-    color: var(--white-color);
-    border-radius: 0rem 2rem 0rem;
-    outline: none;
-    cursor: pointer;
-    margin-bottom: 4rem;
-    font-size: 1.5rem;
-}
 
 
-  .cardgrid{
-    display: grid;
-    grid-template-columns: 2fr 3fr ;
-    grid-gap: 2rem;
-    height: 30rem;
-    grid-template-areas: 
-    ' vraag vraag '
-    ' verhaal verhaal '
-    ' gegevens gegevens '
-}
+@media only screen and (min-width: 0){
+    .loadmore{
+        height: 5rem;
+        width: 100%;
+        margin-top: 2rem;
+        font-weight: 700;
+        background-color: var(--pink-color);
+        border: none;
+        color: var(--white-color);
+        border-radius: 0rem 2rem 0rem;
+        outline: none;
+        cursor: pointer;
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+    }
+  }
 
-.cardgrid2{
-    display: grid;
-    grid-template-columns: 3fr 2fr ;
-    grid-gap: 3rem;
-    grid-template-areas: 
-    ' vraag  voorgesteld'
-    ' verhaal voorgesteld '
-    ' gegevens voorgesteld '
-    ' rating leesmeer2'
-}
+  @media only screen and (min-width: 45em){
+    .loadmore{
+        height: 5rem;
+        width: 20rem;
+        margin-top: 2rem;
+        font-weight: 700;
+        background-color: var(--pink-color);
+        border: none;
+        color: var(--white-color);
+        border-radius: 0rem 2rem 0rem;
+        outline: none;
+        cursor: pointer;
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+    }
+  }
 
-.gegevensgrid{
-    grid-area: gegevens;
-    display: grid;
-    grid-template-columns: max-content 3fr; 
-    grid-gap: 1rem;
-    grid-template-areas: 
-    'persoon locatie'
-    '. leesmeer'
+  @media only screen and (min-width: 78.75em){
+    .loadmore{
+        height: 5rem;
+        width: 20rem;
+        margin-top: 2rem;
+        font-weight: 700;
+        background-color: var(--pink-color);
+        border: none;
+        color: var(--white-color);
+        border-radius: 0rem 2rem 0rem;
+        outline: none;
+        cursor: pointer;
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+    }
+  }
 
-}
+  @media only screen and (min-width: 0){
+    .cardgrid2{
+      
+  }
+  }
+
+  @media only screen and (min-width: 45em){
+    .cardgrid2{
+      display: grid;
+      grid-template-columns: 3fr 2fr ;
+      grid-gap: 3rem;
+      grid-template-areas: 
+      ' vraag  voorgesteld'
+      ' verhaal voorgesteld '
+      ' gegevens voorgesteld '
+      ' rating leesmeer2'
+  }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .cardgrid2{
+      display: grid;
+      grid-template-columns: 3fr 2fr ;
+      grid-gap: 3rem;
+      grid-template-areas: 
+      ' vraag  voorgesteld'
+      ' verhaal voorgesteld '
+      ' gegevens voorgesteld '
+      ' rating leesmeer2'
+  }
+  }
+
+
+
+@media only screen and (min-width: 0){
+    .cardgrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-gap: 2rem;
+        grid-template-areas: 
+        ' vraag vraag '
+        ' verhaal verhaal '
+        ' gegevens gegevens '
+    }
+  }
+
+  @media only screen and (min-width: 45em){
+    .cardgrid{
+        display: grid;
+        grid-template-columns: 2fr 3fr ;
+        grid-gap: 2rem;
+        height: 30rem;
+        grid-template-areas: 
+        ' vraag vraag '
+        ' verhaal verhaal '
+        ' gegevens gegevens '
+    }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .cardgrid{
+        display: grid;
+        grid-template-columns: 2fr 3fr ;
+        grid-gap: 2rem;
+        height: 30rem;
+        grid-template-areas: 
+        ' vraag vraag '
+        ' verhaal verhaal '
+        ' gegevens gegevens '
+    }
+  }
+
+
+
+  @media only screen and (min-width: 0){
+    .gegevensgrid{
+        grid-area: gegevens;
+        display: grid;
+        grid-template-columns: max-content 3fr; 
+        grid-gap: 1rem;
+        grid-template-areas: 
+        'persoon persoon'
+        'locatie locatie'
+        'leesmeer leesmeer'
+    
+    }
+  }
+
+  @media only screen and (min-width: 45em){
+    .gegevensgrid{
+        grid-area: gegevens;
+        display: grid;
+        grid-template-columns: max-content 3fr; 
+        grid-gap: 1rem;
+        grid-template-areas: 
+        'persoon locatie'
+        '. leesmeer'
+    
+    }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .gegevensgrid{
+        grid-area: gegevens;
+        display: grid;
+        grid-template-columns: max-content 3fr; 
+        grid-gap: 1rem;
+        grid-template-areas: 
+        'persoon locatie'
+        '. leesmeer'
+    
+    }
+  }
+
 
 .operaverhalentitel{
     color: var(--pink-color);
@@ -257,7 +462,20 @@
     margin-bottom: 2rem;
 }
 
-.locatie{
+
+@media only screen and (min-width: 0){
+  .locatie{
+    grid-area: locatie;
+    color: var(--pink-color);
+    font-size: 1.2rem;
+    font-weight: 300;
+    align-self: center;
+    justify-self: flex-end;
+}
+}
+
+@media only screen and (min-width: 45em){
+  .locatie{
     grid-area: locatie;
     color: var(--pink-color);
     font-size: 1.5rem;
@@ -265,8 +483,36 @@
     align-self: center;
     justify-self: flex-end;
 }
+}
 
-.leesmeer{
+@media only screen and (min-width: 78.75em){
+  .locatie{
+    grid-area: locatie;
+    color: var(--pink-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    align-self: center;
+    justify-self: flex-end;
+}
+}
+
+@media only screen and (min-width: 0){
+  .leesmeer{
+    grid-area: leesmeer;
+    background-color: var(--pink-color);
+    border: none;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:  var(--white-color);
+    cursor: pointer;
+    outline: none;
+}
+}
+
+@media only screen and (min-width: 45em){
+  .leesmeer{
     grid-area: leesmeer;
     background-color: var(--pink-color);
     border: none;
@@ -280,6 +526,26 @@
     cursor: pointer;
     outline: none;
 }
+}
+
+@media only screen and (min-width: 78.75em){
+  .leesmeer{
+    grid-area: leesmeer;
+    background-color: var(--pink-color);
+    border: none;
+    width: 10rem;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:  var(--white-color);
+    justify-self: flex-end;
+    cursor: pointer;
+    outline: none;
+}
+}
+
+
 
 .leesmeer2{
     grid-area: leesmeer2;
@@ -299,16 +565,43 @@
     outline: none;
 }
 
-.card{
-    flex: 0 0  auto;
-    margin: 3rem;
-    width: 50rem;
-    padding:4rem;
-    border-radius: 3rem 0rem 3rem;
-    background-color: var(--white-color);
-    box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
-    background-repeat: no-repeat;
-}
+@media only screen and (min-width: 0){
+    .card{
+        flex: 0 0  auto;
+        margin: 3rem;
+        padding:4rem;
+        border-radius: 3rem 0rem 3rem;
+        background-color: var(--white-color);
+        box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+        background-repeat: no-repeat;
+    }
+  }
+
+  @media only screen and (min-width: 45em){
+    .card{
+        flex: 0 0  auto;
+        margin: 3rem;
+        width: 50rem;
+        padding:4rem;
+        border-radius: 3rem 0rem 3rem;
+        background-color: var(--white-color);
+        box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+        background-repeat: no-repeat;
+    }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .card{
+        flex: 0 0  auto;
+        margin: 3rem;
+        padding:4rem;
+        border-radius: 3rem 0rem 3rem;
+        background-color: var(--white-color);
+        box-shadow: 0px 8.62673px 20px rgba(0, 0, 0, 0.15);
+        background-repeat: no-repeat;
+    }
+  }
+
 
 .cardgrow{
     flex: 0 0  auto;
@@ -321,13 +614,38 @@
     grid-column: 1/3;
 }
 
-.vraag{
-    font-size: 1.6rem;
-    color: #494949;
-    font-weight: 700;
-    grid-area: vraag;
-    line-height: 2.4rem;
-}
+
+@media only screen and (min-width: 0){
+    .vraag{
+        font-size: 1.6rem;
+        color: #494949;
+        font-weight: 700;
+        grid-area: vraag;
+        line-height: 2.4rem;
+    }
+  }
+
+  @media only screen and (min-width: 45em){
+    .vraag{
+        font-size: 1.6rem;
+        color: #494949;
+        font-weight: 700;
+        grid-area: vraag;
+        line-height: 2.4rem;
+    }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .vraag{
+        font-size: 1.4rem;
+        color: #494949;
+        font-weight: 700;
+        grid-area: vraag;
+        line-height: 2.4rem;
+    }
+  }
+
+
 
 .verhaal{
     grid-area: verhaal;
@@ -344,11 +662,31 @@
 }
 
 
-.persoon{
+@media only screen and (min-width: 0){
+  .persoon{
+    grid-area: persoon;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+
+@media only screen and (min-width: 45em){
+  .persoon{
     grid-area: persoon;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+}
+
+@media only screen and (min-width: 78.75em){
+  .persoon{
+    grid-area: persoon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 }
 
 .naam{
@@ -367,7 +705,8 @@
     .footergrid{
         display: grid;
         grid-template-columns: 1fr;
-        margin-top: 10rem;
+        grid-gap: 2rem;
+        margin-top: 5rem;
     }
   }
 
@@ -437,7 +776,22 @@
     text-decoration: none;
 }
 
-.ratingbuttn{
+@media only screen and (min-width: 0){
+  .ratingbuttn{
+    background: transparent;
+    border: 0.3rem solid var(--blue-color);
+    margin: 0.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+    outline: none;
+    cursor: pointer;
+}
+}
+
+@media only screen and (min-width: 45em){
+  .ratingbuttn{
     background: transparent;
     border: 0.4rem solid var(--blue-color);
     height: 5rem;
@@ -449,17 +803,100 @@
     outline: none;
     cursor: pointer;
 }
-
-.ratingbuttn p{
-        color: var(--blue-color);
-        font-weight: 700;
-        font-size: 1.8rem;
-        margin-top: 0.5rem;
 }
 
-.ratingbuttns{
+@media only screen and (min-width: 78.75em){
+  .ratingbuttn{
+
+    background: transparent;
+    border: 0.4rem solid var(--blue-color);
+    height: 5rem;
+    width: 8rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+    outline: none;
+    cursor: pointer;
+}
+}
+
+
+@media only screen and (min-width: 0){
+  .ratingbuttn p{
+    color: var(--blue-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+}
+
+@media only screen and (min-width: 45em){
+  .ratingbuttn p{
+    color: var(--blue-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+}
+
+@media only screen and (min-width: 78.75em){
+  .ratingbuttn p{
+    color: var(--blue-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+}
+
+@media only screen and (min-width: 0){
+  .ratingbuttns{
+    grid-area: rating;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}
+}
+
+@media only screen and (min-width: 45em){
+  .ratingbuttns{
+    grid-area: rating;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}
+}
+
+@media only screen and (min-width: 78.75em){
+  .ratingbuttns{
+    grid-area: rating;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 40rem;
+
+}
+}
+
+
+
+
+@media only screen and (min-width: 0){
+  .emoji{
+    composes: img-responsive from "../styles/index.css";
+  }
+}
+
+@media only screen and (min-width: 45em){
+  .emoji{
+    composes: img-responsive from "../styles/index.css";
+  }
+}
+
+@media only screen and (min-width: 78.75em){
+  .emoji{
+    width: 3rem;
+    height: 3rem;
+  }
 }

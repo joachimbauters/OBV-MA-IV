@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes, inject, observer } from "mobx-react";
 import styles from "./Popular.module.css";
+import { Link } from "react-router-dom";
 
 const Popular = ({ verhalenStore }) => {
   const { verhalen } = verhalenStore;
@@ -53,7 +54,9 @@ const Popular = ({ verhalenStore }) => {
           ) : (
             <p>Tijdelijk geen verhalen beschikbaar :(</p>
           )}
-          <button className={styles.ontdekmeer}>Ontdek meer verhalen</button>
+          <Link to={`/jullieverhalen`}>
+            <button className={styles.ontdekmeer}>Ontdek meer verhalen</button>
+          </Link>
         </div>
       </section>
     </>

@@ -5,6 +5,7 @@ import { PropTypes, inject, observer } from "mobx-react";
 import wheels from "../../assets/wheels.svg";
 import { Link } from "react-router-dom";
 import video from "../../assets/Header.mp4";
+import mobileheader from "../../assets/mobileheader.png";
 
 const Header = ({ verhalenStore }) => {
   const { verhalen } = verhalenStore;
@@ -59,6 +60,7 @@ const Header = ({ verhalenStore }) => {
         <video width="100%" loop autoPlay className={styles.treinvideo}>
           <source src={video} type="video/mp4" />
         </video>
+        <img src={mobileheader} alt="trein" className={styles.mobileheader} />
         <div className={styles.redline} />
       </section>
     </>

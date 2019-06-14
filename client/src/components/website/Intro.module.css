@@ -4,7 +4,7 @@
 
 .container {
     composes: container from "../../styles/index.css";
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   @media only screen and (min-width: 0){
@@ -20,26 +20,42 @@
   }
 
 
-.introtitel{
-    font-weight: 900;
-    font-size: 4rem;
-    text-transform: uppercase;
-    line-height: 5rem;
-    color: transparent;
-    -webkit-text-stroke: 0.177rem var(--blue-color);
-}
+  @media only screen and (min-width: 0){
+    .introtitel{
+      font-weight: 900;
+      font-size: 3rem;
+      text-transform: uppercase;
+      line-height: 4rem;
+      color: transparent;
+      -webkit-text-stroke: 0.177rem var(--blue-color);
+  }
+  }
+
+  @media only screen and (min-width: 78.75em){
+    .introtitel{
+      font-weight: 900;
+      font-size: 4rem;
+      text-transform: uppercase;
+      line-height: 5rem;
+      color: transparent;
+      -webkit-text-stroke: 0.177rem var(--blue-color);
+  }
+  }
 
 .intropink{
     color: var(--pink-color);
     -webkit-text-stroke: 0rem var(--blue-color);
 }
 
-.introtext{
+
+@media only screen and (min-width: 0){
+  .introtext{
     color: var(--gray-color);
     font-weight: 300;
     line-height: 3rem;
     font-size: 1.6rem;
     margin-top: 3rem;
+}
 }
 
 @media only screen and (min-width: 78.75em){
@@ -54,13 +70,14 @@
   }
 
 
-
+  @media only screen and (min-width: 0em){
     .introgrid{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 2rem;
-    
-    }
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+  
+  }
+  }
 
 
   @media only screen and (min-width: 78.75em){

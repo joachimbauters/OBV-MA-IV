@@ -1,5 +1,5 @@
 import React from "react";
-import videolink from "../assets/Superb_sunset.mp4";
+import videolink from "../assets/intro_movie_f.mp4";
 import { Link } from "react-router-dom";
 import styles from "./WAHome.module.css";
 
